@@ -53,4 +53,6 @@ let episodes = screen.queryByTestId('episodes-container');
 expect(episodes).not.toBeInTheDocument();
 
 rerender(<Show show={testShow} selectedSeason={1}/> )
+episodes = screen.queryByTestId("episodes-container");
+expect(episodes).toBeInTheDocument()
  });
