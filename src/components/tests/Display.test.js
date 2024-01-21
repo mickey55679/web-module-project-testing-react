@@ -28,11 +28,14 @@ test('renders without errors with no props', async () => {
 
 });
 
-test('renders Show component when the button is clicked ', () => {
+test('renders Show component when the button is clicked ', async () => {
  mockFetchShow.mockResolvedValueOnce(testShow);
  render(<Display/>);
  const button = screen.getByRole('button');
  userEvent.click(button)
+
+ const show = await screen.findByTestId('show-container')
+ expect(show).toBeInTheDocument();
  });
 
 test('renders show season options matching your data when the button is clicked', () => { 
