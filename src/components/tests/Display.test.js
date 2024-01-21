@@ -46,7 +46,7 @@ test('renders show season options matching your data when the button is clicked'
     userEvent.click(button);  
 
     await waitFor(() => {
-        const seasonOptions = screen.findAllByTestId('season-option');
+        const seasonOptions = screen.queryAllByTestId('season-option');
         console.log(seasonOptions)
         expect(seasonOptions).toHaveLength(2);
     })
